@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Descripton Phone</title>
+</head>
+<body>
+
+<h1>NOKIA</h1>
+<button type="button" id="inbox1" onclick="inbox1();">Inbox</button>
+<button type="button" id="sent1" onclick="sent1();">Sent</button><br/>
+<button type="button" id="writeMessage1" onclick="writeMessage1();">WriteMessage</button>
+<button type="button" id="send1" onclick="send1();">Send</button><br/>
+<button type="button" id="on/off1" onclick="on_off1()">On/Off</button>
+<button type="button" id="check_on/off1" onclick="check_on_off1()">Check On/Off</button>
+<button type="button" id="battery1" onclick="batterryPin1()">Batterry</button>
+<button type="button" id="showpin1" onclick="showPin1();">Show Pin</button>
+<p id="result1"></p>
+<br/><br/><br/><br/>
+
+<h1>IPHONE</h1>
+<button type="button" id="inbox2" onclick="inbox2();">Inbox</button>
+<button type="button" id="sent2" onclick="sent2();">Sent</button><br/>
+<button type="button" id="writeMessage2" onclick="writeMessage2();">WriteMessage</button>
+<button type="button" id="send2" onclick="send2();">Send</button><br/>
+<button type="button" id="on/off2" onclick="on_off2()">On/Off</button>
+<button type="button" id="check_on/off2" onclick="check_on_off2()">Check On/Off</button>
+<button type="button" id="battery2" onclick="batterryPin2();">Batterry</button>
+<button type="button" id="showpin2" onclick="showPin2();">Show Pin</button>
+<p id="result2"></p>
+<script>
+    let check1 = 0;
+    let check2 = 1;
+    let pin1 = 0;
+    let pin2 = 0;
+    let message1 ="";
+    let message2 ="";
+    let t="";
+    let mess1 = "";
+    let mess2 = "";
+    function on_off1() {
+        let status = confirm('phone is on or off');
+        if (status === true){
+            return check1 = 1;
+        }
+        else {
+            return check1 = 0;
+        }
+    }
+
+    function check_on_off1() {
+        if (check1 === 1){
+            return alert ('Phone On');
+        }
+        else {
+            return alert ('Phone Off');        }
+    }
+    function batterryPin1() {
+        if (check1 ===1){
+            return pin1++;
+        }
+        return pin1 =0;
+    }
+    function showPin1() {
+        if (check1 ===1){
+            return alert('Pin is :' +pin1 );
+        }
+        return null;
+    }
+    function writeMessage1() {
+        if (pin1>0){
+            if (check1 ===1){
+                pin1--;
+                return message1 = prompt('Enter a message:');
+            }
+            return null;
+        }
+        else {
+            alert('You should batterry!!!')
+        }
+    }
+    function send1() {
+        if (pin1>0){
+            if (check1 ===1){
+                pin1--;
+                return t=message1;
+            }
+            return null;
+        }
+        alert('You should batterry!!!')
+    }
+    function sent2() {
+        if (pin2>0){
+            if (check2 === 1){
+                pin2--;
+                return mess2 = t;
+            }
+            return null;
+        }
+        else {
+            alert('You should batterry!!!')
+        }
+    }
+    function inbox2() {
+        if (pin2>0){
+            if (check2 ===1){
+                pin2--;
+                return document.getElementById('result2').innerHTML = mess2;
+            }
+            return null;
+        }
+        else {
+            alert('You should batterry!!!')
+        }
+    }
+
+
+    function on_off2() {
+        let status = confirm('phone is on or off');
+        if (status === true){
+            return check2 = 1;
+        }
+        else {
+            return check2 = 0;
+        }
+    }
+
+    function check_on_off2() {
+        if (check2 === 1){
+            return alert ('Phone On');
+        }
+        else {
+            return alert ('Phone Off');        }
+    }
+    function batterryPin2() {
+        if (check2 ===1){
+            return pin2++;
+        }
+        return pin2 =0;
+    }
+    function showPin2() {
+        if (pin2>0){
+            if (check2 ===1){
+                return alert('Pin is :' +pin2 );
+            }
+            return null;
+        }
+        else {
+            alert('You should batterry!!!')
+        }
+    }
+    function writeMessage2() {
+        if (pin2>0){
+            if (check2 ===1){
+                pin2--;
+                return message2 = prompt('Enter a message:');
+            }
+            return null;
+        }
+        else {
+            alert('You should batterry!!!')
+        }
+    }
+    function send2() {
+        if (pin2>0){
+            if (check2 ===1){
+                pin2--;
+                return t=message2;
+            }
+            return null;
+        }
+        else {
+            alert('You should batterry!!!')
+        }
+    }
+    function sent1() {
+        if (pin1>0){
+            if (check1 === 1){
+                pin1--;
+                return mess1 = t;
+            }
+            return null;
+        }
+        else {
+            alert('You should batterry!!!')
+        }
+    }
+    function inbox1() {
+        if (pin1>0){
+            if (check1 ===1){
+                pin1--;
+                return document.getElementById('result1').innerHTML = mess1;
+            }
+            return null;
+        }
+        else {
+            alert('You should batterry!!!')
+        }
+
+    }
+
+</script>
+</body>
+</html>
