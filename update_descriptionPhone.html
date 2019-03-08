@@ -5,31 +5,44 @@
     <title>Description Phone</title>
 </head>
 <body>
+<center>
+    <h3>Description Phone</h3>
+    <table border="1" cellspacing="0" cellpadding="30" style="text-align: center">
+    <tr>
+        <th>PHONE</th>
+        <th>Message content</th>
+    </tr>
+    <tr>
+        <td><h1>NOKIA</h1>
+            <button type="button" onclick="NOKIA.inbox();">Inbox</button>
+            <button type="button" onclick="NOKIA.sent();">Sent</button><br/><br/>
+            <button type="button" onclick="NOKIA.writeMessage();">WriteMessage</button>
+            <button type="button" onclick="NOKIA.send();">Send</button><br/><br/>
+            <button type="button" onclick="NOKIA.on_off()">On/Off</button>
+            <button type="button" onclick="NOKIA.check_on_off()">Check On/Off</button>
+            <button type="button" onclick="NOKIA.batterryPin()">Batterry</button>
+            <button type="button" onclick="NOKIA.showPin();">Show Pin</button>
+            <br/><br/><br/>
+            <h1>IPHONE</h1>
+            <button type="button" onclick="IPHONE.inbox();">Inbox</button>
+            <button type="button" onclick="IPHONE.sent();">Sent</button><br/><br/>
+            <button type="button" onclick="IPHONE.writeMessage();">WriteMessage</button>
+            <button type="button" onclick="IPHONE.send();">Send</button><br/><br/>
+            <button type="button" onclick="IPHONE.on_off()">On/Off</button>
+            <button type="button" onclick="IPHONE.check_on_off()">Check On/Off</button>
+            <button type="button" onclick="IPHONE.batterryPin();">Batterry</button>
+            <button type="button" onclick="IPHONE.showPin();">Show Pin</button>
+        </td>
+        <td id="result"></td>
+    </tr>
+</table>
+</center>
 
-<h1>NOKIA</h1>
-<button type="button" onclick="NOKIA.inbox();">Inbox</button>
-<button type="button" onclick="NOKIA.sent();">Sent</button><br/>
-<button type="button" onclick="NOKIA.writeMessage();">WriteMessage</button>
-<button type="button" onclick="NOKIA.send();">Send</button><br/>
-<button type="button" onclick="NOKIA.on_off()">On/Off</button>
-<button type="button" onclick="NOKIA.check_on_off()">Check On/Off</button>
-<button type="button" onclick="NOKIA.batterryPin()">Batterry</button>
-<button type="button" onclick="NOKIA.showPin();">Show Pin</button>
-<p id="result1"></p>
-<br/><br/><br/><br/>
 
-<h1>IPHONE</h1>
-<button type="button" onclick="IPHONE.inbox();">Inbox</button>
-<button type="button" onclick="IPHONE.sent();">Sent</button><br/>
-<button type="button" onclick="IPHONE.writeMessage();">WriteMessage</button>
-<button type="button" onclick="IPHONE.send();">Send</button><br/>
-<button type="button" onclick="IPHONE.on_off()">On/Off</button>
-<button type="button" onclick="IPHONE.check_on_off()">Check On/Off</button>
-<button type="button" onclick="IPHONE.batterryPin();">Batterry</button>
-<button type="button" onclick="IPHONE.showPin();">Show Pin</button>
-<p id="result2"></p>
+
 <script>
     let t = [];
+    let data = "";
     let phone = function(name1,name2,t1,t2){
         let check = 0;
         let pin = 20;
@@ -61,7 +74,7 @@
         };
         this.showPin = function () {
             if (check ===1){
-                return alert('Pin is :' +pin1 );
+                return alert('Pin is :' +pin );
             }
             return alert('Phone Off');
         };
@@ -69,7 +82,7 @@
             if (pin>0){
                 if (check ===1){
                     pin--;
-                    return message = name1+" send to "+name2+" message:"+'<br/>'+prompt('Enter a message:');
+                    return message = name1+" send to "+name2+" message:"+'<br/>'+prompt('Enter a message:')+'<br/>';
                 }
                 return alert('Phone Off');
             }
@@ -105,7 +118,8 @@
             if (pin>0){
                 if (check ===1){
                     pin--;
-                    return document.getElementById('result1').innerHTML = mess;
+                    data+=mess;
+                    return document.getElementById('result').innerHTML = data;
                 }
                 return alert('Phone Off');
             }
