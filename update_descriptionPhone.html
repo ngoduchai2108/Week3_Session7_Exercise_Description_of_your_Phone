@@ -29,7 +29,7 @@
 <p id="result2"></p>
 <script>
     let t = [];
-    let phone = function(t1,t2){
+    let phone = function(name1,name2,t1,t2){
         let check = 0;
         let pin = 20;
         let message ="";
@@ -68,7 +68,7 @@
             if (pin>0){
                 if (check ===1){
                     pin--;
-                    return message = prompt('Enter a message:');
+                    return message = name1+" send to "+name2+" message:"+'<br/>'+prompt('Enter a message:');
                 }
                 return alert('Phone Off');
             }
@@ -113,8 +113,8 @@
         }
     };
 
-    let NOKIA = new phone(0,1);
-    let IPHONE = new phone(1,0);
+    let NOKIA = new phone("NOKIA","IPHONE",0,1);
+    let IPHONE = new phone("IPHONE","NOKIA",1,0);
 
 
 
