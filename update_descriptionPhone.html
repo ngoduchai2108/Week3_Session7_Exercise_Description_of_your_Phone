@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Description Phone</title>
+</head>
+<body>
+<h1>NOKIA</h1>
+<button type="button" onclick="NOKIA.inbox();">Inbox</button>
+<button type="button" onclick="NOKIA.sent();">Sent</button><br/>
+<button type="button" onclick="NOKIA.writeMessage();">WriteMessage</button>
+<button type="button" onclick="NOKIA.send();">Send</button><br/>
+<button type="button" onclick="NOKIA.on_off()">On/Off</button>
+<button type="button" onclick="NOKIA.check_on_off()">Check On/Off</button>
+<button type="button" onclick="NOKIA.batterryPin()">Batterry</button>
+<button type="button" onclick="NOKIA.showPin();">Show Pin</button>
+<p id="result1"></p>
+<br/><br/><br/><br/>
+
+<h1>IPHONE</h1>
+<button type="button" onclick="IPHONE.inbox();">Inbox</button>
+<button type="button" onclick="IPHONE.sent();">Sent</button><br/>
+<button type="button" onclick="IPHONE.writeMessage();">WriteMessage</button>
+<button type="button" onclick="IPHONE.send();">Send</button><br/>
+<button type="button" onclick="IPHONE.on_off()">On/Off</button>
+<button type="button" onclick="IPHONE.check_on_off()">Check On/Off</button>
+<button type="button" onclick="IPHONE.batterryPin();">Batterry</button>
+<button type="button" onclick="IPHONE.showPin();">Show Pin</button>
+<p id="result2"></p>
+<script>
+    let t = [];
+    let phone = function(t1,t2){
+        let check = 0;
+        let pin = 20;
+        let message ="";
+        let mess ="";
+        this.on_off = function () {
+            let status = confirm('phone is on or off');
+            if (status === true){
+                return check = 1;
+            }
+            else {
+                return check = 0;
+            }
+        };
+
+        this.check_on_off = function () {
+            if (check === 1){
+                return alert ('Phone On');
+            }
+            else {
+                return alert ('Phone Off');
+            }
+        };
+        this.batterryPin = function () {
+            if (check ===1){
+                return pin++;
+            }
+            return pin =0;
+        };
+        this.showPin = function () {
+            if (check ===1){
+                return alert('Pin is :' +pin1 );
+            }
+            return alert('Phone Off');
+        };
+        this.writeMessage = function () {
+            if (pin>0){
+                if (check ===1){
+                    pin--;
+                    return message = prompt('Enter a message:');
+                }
+                return alert('Phone Off');
+            }
+            else {
+                alert('You should batterry!!!')
+            }
+        };
+        this.send = function () {
+            if (pin>0){
+                if (check ===1){
+                    pin--;
+                    return t[t1]=message;
+                }
+                return alert('Phone Off');
+            }
+            alert('You should batterry!!!')
+        };
+        this.sent = function () {
+            if (pin>0){
+                if (check === 1){
+                    pin--;
+                    return mess = t[t2];
+                }
+                return alert('Phone Off');
+            }
+            else {
+                alert('You should batterry!!!')
+            }
+        };
+        this.inbox = function () {
+            if (pin>0){
+                if (check ===1){
+                    pin--;
+                    return document.getElementById('result1').innerHTML = mess;
+                }
+                return alert('Phone Off');
+            }
+            else {
+                alert('You should batterry!!!')
+            }
+
+        }
+    };
+
+    let NOKIA = new phone(0,1);
+    let IPHONE = new phone(1,0);
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
