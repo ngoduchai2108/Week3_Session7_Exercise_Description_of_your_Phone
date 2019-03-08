@@ -5,6 +5,7 @@
     <title>Description Phone</title>
 </head>
 <body>
+
 <h1>NOKIA</h1>
 <button type="button" onclick="NOKIA.inbox();">Inbox</button>
 <button type="button" onclick="NOKIA.sent();">Sent</button><br/>
@@ -80,6 +81,7 @@
             if (pin>0){
                 if (check ===1){
                     pin--;
+                    alert('Messages have been sent');
                     return t[t1]=message;
                 }
                 return alert('Phone Off');
@@ -90,6 +92,7 @@
             if (pin>0){
                 if (check === 1){
                     pin--;
+                    alert('Messages have been send');
                     return mess = t[t2];
                 }
                 return alert('Phone Off');
