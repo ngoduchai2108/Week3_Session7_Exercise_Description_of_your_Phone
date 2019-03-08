@@ -31,11 +31,12 @@
 <script>
     let check1 = 0;
     let check2 = 1;
-    let pin1 = 0;
-    let pin2 = 0;
+    let pin1 = 20;
+    let pin2 = 20;
     let message1 ="";
     let message2 ="";
-    let t="";
+    let t1 ="";
+    let t2 ="";
     let mess1 = "";
     let mess2 = "";
     function on_off1() {
@@ -65,7 +66,7 @@
         if (check1 ===1){
             return alert('Pin is :' +pin1 );
         }
-        return null;
+        return alert('Phone Off');
     }
     function writeMessage1() {
         if (pin1>0){
@@ -73,7 +74,7 @@
                 pin1--;
                 return message1 = prompt('Enter a message:');
             }
-            return null;
+            return alert('Phone Off');
         }
         else {
             alert('You should batterry!!!')
@@ -83,9 +84,9 @@
         if (pin1>0){
             if (check1 ===1){
                 pin1--;
-                return t=message1;
+                return t1=message1;
             }
-            return null;
+            return alert('Phone Off');
         }
         alert('You should batterry!!!')
     }
@@ -93,9 +94,9 @@
         if (pin2>0){
             if (check2 === 1){
                 pin2--;
-                return mess2 = t;
+                return mess2 = t1;
             }
-            return null;
+            return alert('Phone Off');
         }
         else {
             alert('You should batterry!!!')
@@ -107,7 +108,7 @@
                 pin2--;
                 return document.getElementById('result2').innerHTML = mess2;
             }
-            return null;
+            return alert('Phone Off');
         }
         else {
             alert('You should batterry!!!')
@@ -143,7 +144,7 @@
             if (check2 ===1){
                 return alert('Pin is :' +pin2 );
             }
-            return null;
+            return alert('Phone Off');
         }
         else {
             alert('You should batterry!!!')
@@ -155,7 +156,7 @@
                 pin2--;
                 return message2 = prompt('Enter a message:');
             }
-            return null;
+            return alert('Phone Off');
         }
         else {
             alert('You should batterry!!!')
@@ -165,9 +166,9 @@
         if (pin2>0){
             if (check2 ===1){
                 pin2--;
-                return t=message2;
+                return t2=message2;
             }
-            return null;
+            return alert('Phone Off');
         }
         else {
             alert('You should batterry!!!')
@@ -177,9 +178,9 @@
         if (pin1>0){
             if (check1 === 1){
                 pin1--;
-                return mess1 = t;
+                return mess1 = t2;
             }
-            return null;
+            return alert('Phone Off');
         }
         else {
             alert('You should batterry!!!')
@@ -191,7 +192,7 @@
                 pin1--;
                 return document.getElementById('result1').innerHTML = mess1;
             }
-            return null;
+            return alert('Phone Off');
         }
         else {
             alert('You should batterry!!!')
